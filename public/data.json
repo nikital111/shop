@@ -1,0 +1,121 @@
+{
+  "products": [
+    {
+      "id": 0,
+      "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/d/d/ddf8b36b0bef85fc61453646a76fa934.jpg",
+      "name": "Apple iPhone 11",
+      "price": "1000$",
+      "brand": "apple",
+      "specification": {
+        "material": ["Материал", "Металл,стекло"],
+        "color": ["Цвет", "Черный"],
+        "screenType": ["Тип экрана", "IPS"],
+        "screenSize": ["Размер экрана", 6.1]
+      }
+    },
+    {
+      "id": 1,
+      "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/2/2/220a8d68c8b90a880d6b120350d3b094.jpg",
+      "name": "Apple iPhone 8",
+      "price": "600$",
+      "brand": "apple",
+      "specification": {
+        "material": ["Материал", "Металл,стекло"],
+        "color": ["Цвет", "Черный"],
+        "screenType": ["Тип экрана", "IPS"],
+        "screenSize": ["Размер экрана", 4.7]
+      }
+    },
+    {
+      "id": 2,
+      "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/3/c/3ca7aabff2212d386690746e4f259df9.jpg",
+      "name": "Apple iPhone Xs",
+      "price": "800$",
+      "brand": "apple",
+      "specification": {
+        "material": ["Материал", "Металл,стекло"],
+        "color": ["Цвет", "Золотой"],
+        "screenType": ["Тип экрана", "OLED"],
+        "screenSize": ["Размер экрана", 5.8]
+      }
+    },
+    {
+      "id": 3,
+      "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/9/e/9ebe9060cf4d6207a643c4c1d4955016.jpg",
+      "name": "Samsung Galaxy S10",
+      "price": "1000$",
+      "brand": "samsung",
+      "specification": {
+        "material": ["Материал", "Металл,стекло"],
+        "color": ["Цвет", "Красный"],
+        "screenType": ["Тип экрана", "Dynamic AMOLED"],
+        "screenSize": ["Размер экрана", 6.1]
+      }
+    },
+    {
+      "id": 4,
+      "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/1/7/17bc14495df3a0c36c9c5b56f946ec20.jpg",
+      "name": "Samsung Galaxy A50",
+      "price": "300$",
+      "brand": "samsung",
+      "specification": {
+        "material": ["Материал", "Пластик"],
+        "color": ["Цвет", "Белый"],
+        "screenType": ["Тип экрана", "Super AMOLED"],
+        "screenSize": ["Размер экрана", 6.8]
+      }
+    },
+    {
+      "id": 5,
+      "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/2/d/2db6d49d6f6e7fff0e176e102064ed0e.jpg",
+      "name": "Samsung Galaxy S20",
+      "price": "900$",
+      "brand": "samsung",
+      "specification": {
+        "material": ["Материал", "Металл,стекло"],
+        "color": ["Цвет", "Голубой"],
+        "screenType": ["Тип экрана", "Dynamic AMOLED"],
+        "screenSize": ["Размер экрана", 6.2]
+      }
+    },
+    {
+      "id": 6,
+      "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/7/7/773e34eba42284eb3086516db6a06b9d.jpg",
+      "name": "Huawei Y5p",
+      "price": "200$",
+      "brand": "huawei",
+      "specification": {
+        "material": ["Материал", "Пластик"],
+        "color": ["Цвет", "Черный"],
+        "screenType": ["Тип экрана", "IPS"],
+        "screenSize": ["Размер экрана", 5.45]
+      }
+    },
+    {
+      "id": 7,
+      "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/8/c/8c01ed299cd90551e6b4ae52bbe0f311.jpg",
+      "name": "Huawei Y6",
+      "price": "250$",
+      "brand": "huawei",
+      "specification": {
+        "material": ["Материал", "Искуственная кожа"],
+        "color": ["Цвет", "Коричневый"],
+        "screenType": ["Тип экрана", "IPS"],
+        "screenSize": ["Размер экрана", 6.09]
+      }
+    },
+    {
+      "id": 8,
+      "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/b/8/b8941821cea3e3a796f2878efc532bcf.jpg",
+      "name": "Huawei P40 Pro",
+      "price": "1100$",
+      "brand": "huawei",
+      "specification": {
+        "material": ["Материал", "Металл,стекло"],
+        "color": ["Цвет", "Серый"],
+        "screenType": ["Тип экрана", "OLED"],
+        "screenSize": ["Размер экрана", 6.58]
+      }
+    }
+  ]
+}

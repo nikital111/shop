@@ -1,0 +1,136 @@
+footer {
+  width: 100%;
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  color: white;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+footer #kletka > div {
+  max-width: 300px;
+  width: 100%;
+}
+
+#div-icon {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.icon {
+  max-width: 30px;
+}
+
+#div-icon ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 60%;
+}
+
+#div-icon a :hover {
+  transform: scale(1.08);
+  -webkit-box-shadow: 0px 0px 48px 0px #ffffff;
+  box-shadow: 0px 0px 48px 0px #ffffff;
+}
+
+#div-icon h2 {
+  width: 55%;
+}
+
+#div-icon a {
+  padding: 20px 8px 5px 8px;
+}
+
+#d-info {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+#d-info li {
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#kletka {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+
+.f-links {
+  max-width: 1000px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 15px;
+}
+.f-links h3 {
+  width: 100%;
+  text-align: center;
+}
+
+.f-links ul {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+}
+
+.f-links a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+  display: block;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.f-links li a:hover {
+  background: #332d2d;
+}
+.form-subscribe {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 15px;
+  flex-direction: column;
+}
+
+.form-subscribe input {
+  margin-bottom: 15px;
+  height: 25px;
+}
+
+.form-subscribe button {
+  background: white;
+  border: none;
+  padding: 5px 10px;
+  color: black;
+  cursor: pointer;
+}
+
+.form-subscribe button:hover {
+  transform: scale(1.03);
+}
+
+footer i {
+  max-width: 30px;
+}

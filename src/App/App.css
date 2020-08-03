@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+.page {
+  max-width: 1300px;
+  margin: 15px auto;
+  min-height: 600px;
+  box-shadow: 0 0 3px 2px #0000007d;
+}
+
+hr {
+  height: 200px;
+  width: 1px;
+}
+
+body,
+ul {
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media (max-width: 740px) {
+  header .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  header ul {
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 25px;
+  }
+}
+
+@media (max-width: 730px) {
+  hr {
+    width: 250px;
+    height: 0;
+  }
+
+  #kletka {
+    flex-direction: column;
+  }
+
+  #d-info {
+    margin-top: 20px;
+  }
+}
