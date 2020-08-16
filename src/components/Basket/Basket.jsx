@@ -3,10 +3,11 @@ import React from "react";
 import "./Basket.css";
 
 const Basket = () => {
-
-    return (
-        <div>asdasdasdasd</div>
-    );
+  return (
+    <div>
+      <p>asdasdasd</p>
+    </div>
+  );
 };
 
 export default Basket;

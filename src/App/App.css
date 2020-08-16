@@ -3,7 +3,7 @@
 }
 
 .page {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 15px auto;
   min-height: 600px;
   box-shadow: 0 0 3px 2px #0000007d;
@@ -42,7 +42,7 @@ a {
   }
 }
 
-@media (max-width: 730px) {
+@media (max-width: 740px) {
   hr {
     width: 250px;
     height: 0;

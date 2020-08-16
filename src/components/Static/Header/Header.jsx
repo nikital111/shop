@@ -4,13 +4,13 @@ import { NavLink } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const head = React.useRef()
-  window.addEventListener('scroll', () => {
+  const head = React.useRef();
+  window.addEventListener("scroll", () => {
+    if (!head.current) return;
     if (window.scrollY > 90) {
-      head.current.className = 'fixed';
-    }
-    else head.current.className = null;
-  })
+      head.current.className = "fixed";
+    } else head.current.className = null;
+  });
   return (
     <header ref={head}>
       <div className="container">
@@ -19,12 +19,12 @@ const Header = () => {
           <li>
             <NavLink activeClassName="active" exact to="/">
               Catalog
-        </NavLink>
+            </NavLink>
           </li>
           <li>
             <NavLink activeClassName="active" to="/basket">
               Basket
-        </NavLink>
+            </NavLink>
           </li>
         </ul>
       </div>

@@ -4,6 +4,7 @@
       "id": 0,
       "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/d/d/ddf8b36b0bef85fc61453646a76fa934.jpg",
       "name": "Apple iPhone 11",
+      "priceN": 1000,
       "price": "1000$",
       "brand": "apple",
       "specification": {
@@ -17,6 +18,7 @@
       "id": 1,
       "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/2/2/220a8d68c8b90a880d6b120350d3b094.jpg",
       "name": "Apple iPhone 8",
+      "priceN": 600,
       "price": "600$",
       "brand": "apple",
       "specification": {
@@ -30,6 +32,7 @@
       "id": 2,
       "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/3/c/3ca7aabff2212d386690746e4f259df9.jpg",
       "name": "Apple iPhone Xs",
+      "priceN": 800,
       "price": "800$",
       "brand": "apple",
       "specification": {
@@ -43,6 +46,7 @@
       "id": 3,
       "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/9/e/9ebe9060cf4d6207a643c4c1d4955016.jpg",
       "name": "Samsung Galaxy S10",
+      "priceN": 1000,
       "price": "1000$",
       "brand": "samsung",
       "specification": {
@@ -56,6 +60,7 @@
       "id": 4,
       "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/1/7/17bc14495df3a0c36c9c5b56f946ec20.jpg",
       "name": "Samsung Galaxy A50",
+      "priceN": 300,
       "price": "300$",
       "brand": "samsung",
       "specification": {
@@ -69,6 +74,7 @@
       "id": 5,
       "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/2/d/2db6d49d6f6e7fff0e176e102064ed0e.jpg",
       "name": "Samsung Galaxy S20",
+      "priceN": 900,
       "price": "900$",
       "brand": "samsung",
       "specification": {
@@ -82,6 +88,7 @@
       "id": 6,
       "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/7/7/773e34eba42284eb3086516db6a06b9d.jpg",
       "name": "Huawei Y5p",
+      "priceN": 200,
       "price": "200$",
       "brand": "huawei",
       "specification": {
@@ -95,6 +102,7 @@
       "id": 7,
       "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/8/c/8c01ed299cd90551e6b4ae52bbe0f311.jpg",
       "name": "Huawei Y6",
+      "priceN": 250,
       "price": "250$",
       "brand": "huawei",
       "specification": {
@@ -108,6 +116,7 @@
       "id": 8,
       "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/b/8/b8941821cea3e3a796f2878efc532bcf.jpg",
       "name": "Huawei P40 Pro",
+      "priceN": 1100,
       "price": "1100$",
       "brand": "huawei",
       "specification": {

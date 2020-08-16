@@ -1,99 +1,198 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  fetchProducts,
+  filterProducts,
+  setBrand,
+  setSpec,
+  setImg,
+  sortByPrice,
+} from "../../actions/actions";
 import "./MainPage.css";
-import Product from './Product';
+import Product from "./Product";
 
 function MainPage() {
-    const [products, setProducts] = useState([]);
-    const [sortProducts, setSortProducts] = useState([]);
-    const [sortParams, setSortParams] = useState({
-        sorted: [],
-        sortedFor: null
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products);
+  const sortProducts = useSelector((state) => state.sortProducts);
+  const sortParams = useSelector((state) => state.sortParams);
+  const curImg = useSelector((state) => state.img);
+
+  useEffect(() => {
+    dispatch(fetchProducts);
+    if (sortParams.sortedBrand.length > 0) {
+      for (let param of sortParams.sortedBrand) {
+        document.querySelector(`#${param}_ch`).checked = true;
+      }
+    }
+    if (sortParams.sortedSpec.length > 0) {
+      for (let spec of sortParams.sortedSpec) {
+        let specA = spec
+          .toString()
+          .split("")
+          .map((l) => {
+            if (l === " " || l === "." || l === ",") {
+              l = "_";
+              return l;
+            }
+            return l;
+          })
+          .join("");
+        document.querySelector(`#_${specA}_ch`).checked = true;
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    dispatch(filterProducts());
+  }, [sortParams.sorted]);
+
+  const list = sortProducts.map((product) => {
+    return (
+      <Product
+        key={product.id}
+        imageURL={product.imageURL}
+        name={product.name}
+        price={product.price}
+        specifications={product.specification}
+      />
+    );
+  });
+
+  const listOfBrands = () => {
+    const objOfBrands = {};
+    for (let product of products) {
+      if (objOfBrands[product.brand]) objOfBrands[product.brand] += 1;
+      else objOfBrands[product.brand] = 1;
+    }
+    return Object.keys(objOfBrands).map((brand, key) => {
+      return (
+        <li key={`${brand}_${key}`}>
+          <input
+            id={`${brand}_ch`}
+            type="checkbox"
+            onChange={(e) => {
+              dispatch(setBrand(e, brand));
+              dispatch(filterProducts());
+            }}
+          />
+          <label htmlFor={`${brand}_ch`}>{brand}</label>
+          <span className="numParams">({objOfBrands[brand]})</span>
+        </li>
+      );
     });
+  };
 
-    useEffect(() => {
-        fetch('/data.json')
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-
-                setProducts(data.products)
-                setSortProducts(data.products)
-            })
-    }, [])
-
-    useEffect(() => {
-
-        const helpSort = product => {
-            if (sortParams.sorted.length === 0) {
-                return true
-            }
-            for (let i = 0; i < sortParams.sorted.length; i++) {
-                if (sortParams.sorted[i] === product.brand) return true
-                else continue
-            }
-            return false
+  const listOfSpecifications = () => {
+    const objOfSpecification = {};
+    for (let product of products) {
+      for (let spec of Object.keys(product.specification)) {
+        if (objOfSpecification[product.specification[spec][0]]) continue;
+        else objOfSpecification[product.specification[spec][0]] = {};
+      }
+    }
+    for (let product of products) {
+      for (let spec of Object.keys(product.specification)) {
+        if (
+          objOfSpecification[product.specification[spec][0]][
+            product.specification[spec][1]
+          ]
+        ) {
+          objOfSpecification[product.specification[spec][0]][
+            product.specification[spec][1]
+          ] += 1;
+        } else {
+          objOfSpecification[product.specification[spec][0]][
+            product.specification[spec][1]
+          ] = 1;
         }
-
-        let sortedProducts = products.filter(helpSort)
-
-        setSortProducts(sortedProducts)
-
-    }, [sortParams.sorted])
-
-    const list = sortProducts.map(product => {
-        return <Product
-            key={product.id}
-            imageURL={product.imageURL}
-            name={product.name}
-            price={product.price}
-            specifications={product.specification} />
-    })
-
-    const sort = (e, brand) => {
-        if (e.target.checked) {
-            setSortParams({ ...sortParams, sorted: [...sortParams.sorted, brand] })
-        }
-        else {
-            setSortParams(() => {
-                const prevState = sortParams.sorted;
-                const nowState = prevState.filter((param) => param !== brand)
-                return { ...sortParams, sorted: nowState }
-            })
-        }
+      }
     }
 
-    return (
-        <div className="container" id="main">
-            <div id="sidebar">
-                <ul>
-                    <li>
-                        <input type="checkbox" onChange={e => {
-                            sort(e, 'apple')
-                        }} />
-                        <label>Apple</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" onChange={e => {
-                            sort(e, 'samsung')
-                        }} />
-                        <label>Samsung</label>
-                    </li>
-                    <li>
-                        <input type="checkbox" onChange={e => {
-                            sort(e, 'huawei')
-                        }} />
-                        <label>Huawei</label>
-                    </li>
-                </ul>
-            </div>
+    return Object.keys(objOfSpecification).map((titleSpec) => {
+      const list = Object.keys(objOfSpecification[titleSpec]).map(
+        (spec, key) => {
+          let specA = spec
+            .toString()
+            .split("")
+            .map((l) => {
+              if (l === " " || l === "." || l === ",") {
+                l = "_";
+                return l;
+              }
+              return l;
+            })
+            .join("");
+          return (
+            <li key={`${specA}_${key}_s`}>
+              <input
+                id={`_${specA}_ch`}
+                type="checkbox"
+                onChange={(e) => {
+                  dispatch(setSpec(e, spec));
+                  dispatch(filterProducts());
+                }}
+              />
+              <label htmlFor={`_${specA}_ch`}>{spec}</label>
+              <span className="numParams">
+                ({objOfSpecification[titleSpec][spec]})
+              </span>
+            </li>
+          );
+        }
+      );
+      return (
+        <>
+          <h3 key={`${titleSpec}_sp`}>{`${titleSpec}:`}</h3>
+          {list}
+        </>
+      );
+    });
+  };
+  const ar = useRef();
+  const sortBy = () => {
+    if (document.querySelector(".arrow").classList[1])
+      document.querySelector(".arrow").classList.remove("rotated");
+    else document.querySelector(".arrow").classList.add("rotated");
+    dispatch(sortByPrice());
+    dispatch(filterProducts());
+  };
 
-            <div id="content">
-                {list}
-            </div>
+  const closeImg = () => {
+    dispatch(setImg());
+  };
+
+  return (
+    <>
+      {curImg ? (
+        <div className="wrap" onClick={closeImg}>
+          <div className="root">
+            <img src={curImg} alt="product" />
+          </div>
         </div>
-    );
+      ) : null}
+      <div className="container" id="main">
+        <div className="sortedDiv" onClick={sortBy}>
+          <span className="arrow" ref={ar}>
+            >
+          </span>
+          Сортировать по цене
+        </div>
+        <div id="sidebar">
+          <div>
+            <h3>Бренды:</h3>
+            <ul>
+              {listOfBrands()}
+              {listOfSpecifications()}
+            </ul>
+          </div>
+        </div>
+
+        <div id="content">{list}</div>
+      </div>
+    </>
+  );
 }
 
 export default MainPage;

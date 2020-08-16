@@ -3,15 +3,7 @@ header {
   background: black;
   color: white;
   padding: 15px;
-}
-
-.container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  z-index: 99999;
 }
 
 header a {
