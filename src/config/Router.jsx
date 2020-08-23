@@ -1,13 +1,13 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import MainPage from "../components/MainPage/MainPage";
-import Basket from "../components/Basket/Basket";
+import Cart from "../components/Cart/Cart";
 
 const Router = () => {
   return (
     <Switch>
       <Route path="/" exact component={MainPage} />
-      <Route path="/basket" exact component={Basket} />
+      <Route path="/Cart" exact component={Cart} />
     </Switch>
   );
 };

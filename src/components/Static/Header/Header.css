@@ -31,7 +31,8 @@ header ul {
 
 #logo {
   display: block;
-  max-width: 100px;
+  max-width: 45px;
+  cursor: pointer;
 }
 
 .fixed {
@@ -42,4 +43,19 @@ header ul {
 .active {
   background-color: white;
   color: black;
+}
+
+
+.divCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.total {
+  margin-left: 5px;
+  padding: 0px 5px 0px 5px;
+  background-color: white;
+  color:black;
 }

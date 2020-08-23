@@ -8,7 +8,7 @@
       "price": "1000$",
       "brand": "apple",
       "specification": {
-        "material": ["Материал", "Металл,стекло"],
+        "material": ["Материалы корпуса", "Металл, стекло"],
         "color": ["Цвет", "Черный"],
         "screenType": ["Тип экрана", "IPS"],
         "screenSize": ["Размер экрана", 6.1]
@@ -22,7 +22,7 @@
       "price": "600$",
       "brand": "apple",
       "specification": {
-        "material": ["Материал", "Металл,стекло"],
+        "material": ["Материалы корпуса", "Металл, стекло"],
         "color": ["Цвет", "Черный"],
         "screenType": ["Тип экрана", "IPS"],
         "screenSize": ["Размер экрана", 4.7]
@@ -36,7 +36,7 @@
       "price": "800$",
       "brand": "apple",
       "specification": {
-        "material": ["Материал", "Металл,стекло"],
+        "material": ["Материалы корпуса", "Металл, стекло"],
         "color": ["Цвет", "Золотой"],
         "screenType": ["Тип экрана", "OLED"],
         "screenSize": ["Размер экрана", 5.8]
@@ -50,7 +50,7 @@
       "price": "1000$",
       "brand": "samsung",
       "specification": {
-        "material": ["Материал", "Металл,стекло"],
+        "material": ["Материалы корпуса", "Металл, стекло"],
         "color": ["Цвет", "Красный"],
         "screenType": ["Тип экрана", "Dynamic AMOLED"],
         "screenSize": ["Размер экрана", 6.1]
@@ -64,7 +64,7 @@
       "price": "300$",
       "brand": "samsung",
       "specification": {
-        "material": ["Материал", "Пластик"],
+        "material": ["Материалы корпуса", "Пластик"],
         "color": ["Цвет", "Белый"],
         "screenType": ["Тип экрана", "Super AMOLED"],
         "screenSize": ["Размер экрана", 6.8]
@@ -78,7 +78,7 @@
       "price": "900$",
       "brand": "samsung",
       "specification": {
-        "material": ["Материал", "Металл,стекло"],
+        "material": ["Материалы корпуса", "Металл, стекло"],
         "color": ["Цвет", "Голубой"],
         "screenType": ["Тип экрана", "Dynamic AMOLED"],
         "screenSize": ["Размер экрана", 6.2]
@@ -92,7 +92,7 @@
       "price": "200$",
       "brand": "huawei",
       "specification": {
-        "material": ["Материал", "Пластик"],
+        "material": ["Материалы корпуса", "Пластик"],
         "color": ["Цвет", "Черный"],
         "screenType": ["Тип экрана", "IPS"],
         "screenSize": ["Размер экрана", 5.45]
@@ -106,7 +106,7 @@
       "price": "250$",
       "brand": "huawei",
       "specification": {
-        "material": ["Материал", "Искуственная кожа"],
+        "material": ["Материалы корпуса", "Искуственная кожа"],
         "color": ["Цвет", "Коричневый"],
         "screenType": ["Тип экрана", "IPS"],
         "screenSize": ["Размер экрана", 6.09]
@@ -120,10 +120,52 @@
       "price": "1100$",
       "brand": "huawei",
       "specification": {
-        "material": ["Материал", "Металл,стекло"],
+        "material": ["Материалы корпуса", "Металл, стекло"],
         "color": ["Цвет", "Серый"],
         "screenType": ["Тип экрана", "OLED"],
         "screenSize": ["Размер экрана", 6.58]
+      }
+    },
+    {
+      "id": 9,
+      "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/8/6/86b50a880d12bda7754991dd8654a937.jpg",
+      "name": "Xiaomi Redmi Note 8T",
+      "priceN": 300,
+      "price": "300$",
+      "brand": "xiaomi",
+      "specification": {
+        "material": ["Материалы корпуса", "Пластик, стекло"],
+        "color": ["Цвет", "Белый"],
+        "screenType": ["Тип экрана", "IPS"],
+        "screenSize": ["Размер экрана", "6.3"]
+      }
+    },
+    {
+      "id": 10,
+      "imageURL": "https://i.citrus.ua/imgcache/size_150/uploads/shop/3/7/375aa93ca9e6f3abd7645fc272e62393.jpg",
+      "name": "Xiaomi Mi 10",
+      "priceN": 850,
+      "price": "850$",
+      "brand": "xiaomi",
+      "specification": {
+        "material": ["Материалы корпуса", "Металл, стекло"],
+        "color": ["Цвет", "Зеленый"],
+        "screenType": ["Тип экрана", "AMOLED"],
+        "screenSize": ["Размер экрана", "6.67"]
+      }
+    },
+    {
+      "id": 11,
+      "imageURL": "https://i.citrus.ua/imgcache/size_180/uploads/shop/c/f/cfe18bb60d8477e50118b74553b8e947.jpg",
+      "name": "Honor 20",
+      "priceN": 440,
+      "price": "440$",
+      "brand": "honor",
+      "specification": {
+        "material": ["Материалы корпуса", "Металл, стекло"],
+        "color": ["Цвет", "Синий"],
+        "screenType": ["Тип экрана", "IPS"],
+        "screenSize": ["Размер экрана", "6.26"]
       }
     }
   ]

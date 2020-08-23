@@ -37,6 +37,10 @@
   transform: rotate(-90deg);
 }
 
+.rotatedSide {
+  transform: rotate(-180deg);
+}
+
 #sidebar {
   display: flex;
   justify-content: center;
@@ -47,6 +51,11 @@
   box-shadow: 2px -1px 5px 0px black;
   margin: 30px 0 0 0;
   padding: 15px;
+  position: relative;
+}
+
+#sidebar label {
+  margin-left: 3px;
 }
 
 #main {
@@ -100,7 +109,7 @@
 #content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 60px 0px 0px 0px;
   width: 75%;
 }
@@ -222,24 +231,47 @@
   height: 100%;
 }
 
-@media (max-width: 1013px) {
+#openSide{
+  display: none;
+  position: absolute;
+  right: -50px;
+  top:0px;
+  border:none;
+  width: 40px;
+  height: 35px;
+  font-size: 30px;
+  background-color: bisque;
+  cursor: pointer;
+  z-index: 12;
+  transition: transform 0.3s;
+}
+
+@media (max-width: 1015px) {
+  #content {
+    width: 100%;
+  }
   .product {
-    width: 48%;
+    width: 32%;
   }
   .fixed_sidebar {
     left: 0px;
   }
   #sidebar {
     min-height: auto;
-    width: 17%;
-    padding: 8px 60px;
+    position: absolute;
+    width: 250px;
+    background-color:white;
+    z-index: 9;
+    left: -260px;
   }
-  #sidebar li {
-    width: 100px;
+
+  #openSide{
+    display: block;
   }
+
 }
 
-@media (max-width: 740px) {
+@media (max-width: 766px) {
   .p-bottom {
     flex-wrap: wrap;
     justify-content: center;
@@ -253,8 +285,6 @@
     width: 48%;
   }
   #sidebar {
-    max-width: 100%;
-    width: 100%;
     margin-top: 70px;
   }
   #sidebar li {

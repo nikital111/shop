@@ -7,7 +7,11 @@ const initialState = {
     sortedSpec: [],
     sortedBy: true
   },
-  img: null
+  img: null,
+  isOpenSidebar:false,
+  cart:[],
+  total:0,
+  totalPrice:0
 };
 
 const reduceMain = (state = initialState, action) => {
@@ -117,6 +121,61 @@ const reduceMain = (state = initialState, action) => {
       return {
         ...state,
         sortParams: { ...state.sortParams, sortedBy: !state.sortParams.sortedBy }
+      }
+    }
+
+    case "IS_OPEN_SIDEBAR": {
+      return {
+        ...state,
+        isOpenSidebar:!state.isOpenSidebar
+      }
+    }
+
+    case "TO_CART": {
+      
+       if(action.val !== undefined){
+         let newTotal = state.total + (action.val - state.cart[action.count].count);
+         let newTotalPrice = 0;
+         newTotalPrice = (newTotal - state.total) * action.product.price;
+          const newCart = [...state.cart];
+          newCart[action.count].count = action.val;
+          console.log(newTotal)
+        return {
+          ...state,
+          cart:newCart,
+          total:newTotal,
+          totalPrice:state.totalPrice + newTotalPrice
+        }
+      }
+
+      if(action.count === undefined){
+      return {
+        ...state,
+        cart:[...state.cart,action.product],
+        total:state.total + 1,
+        totalPrice:state.totalPrice + action.product.price
+      }
+      }
+      if(state.cart[action.count].count === 20) return state;
+      const newCart = state.cart;
+      newCart[action.count].count += 1;
+      return {
+        ...state,
+        cart:newCart,
+        total:state.total + 1,
+        totalPrice:state.totalPrice + action.product.price
+      }
+    }
+
+     case "DELETE_FROM_A_CART": {
+       const newCart = [...state.cart];
+       const pr = newCart.splice(action.i,1)
+       console.log(pr)
+      return {
+        ...state,
+        cart:newCart,
+        total: state.total - pr[0].count,
+        totalPrice: state.totalPrice - (pr[0].price*pr[0].count)
       }
     }
 

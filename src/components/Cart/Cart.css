@@ -1,0 +1,145 @@
+.contCart {
+  max-width: 1200px;
+  min-height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cart{
+  min-height: 400px;
+  width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  position: relative;
+}
+
+.inCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.productInCart {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 150px;
+  margin: 15px 10px;
+  position: relative;
+}
+.productInCart hr {
+  transform: rotate(-90deg);
+  position: absolute;
+  margin: 1px;
+  bottom: -170px;
+  height: 300px;
+  left: 50px;
+}
+.productInCart:last-child hr {
+  display: none;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 150px;
+  max-width: 110px; 
+  font-size: 17px;
+} 
+.main img {
+  margin-top:10px;
+  height: 120px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.divCount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column-reverse;
+  height: 100%;
+  position: absolute;
+  bottom: 0px;
+  right: -115px;
+} 
+.divCount input {
+  max-width: 52px;
+  height: 27px;
+  font-size: 15px;
+  margin-bottom: 7px;
+}
+
+.buyCart {
+  height: 100%;
+  display: flex;
+  flex-direction: column-reverse;
+  position: absolute;
+  bottom: 10px;
+  right: 40px;
+  font-size: 20px;
+}
+
+.buyButt {
+  max-width: 110px;
+  height: 45px;
+  font-size: 25px;
+  color: white;
+  background-color: black;
+    border: none;
+  border-radius: 10px;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.buyButt:hover {
+  transform: scale(1.08);
+  -webkit-box-shadow: 0px 0px 48px 0px #000000;
+  box-shadow: 0px 0px 48px 0px #000000;
+}
+
+.delButt {
+  max-width: 90px;
+  height: 35px;
+  font-size: 15px;
+  color: red;
+  background-color: white;
+    border: none;
+  border-radius: 10px;
+  align-items: center;
+  cursor: pointer;
+  margin-top: 8px;
+}
+.delButt:hover {
+  background-color: red;
+  color: white;
+}
+
+.emptyCart{
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+font-size: 40px;
+}
+.emptyCart NavLink {
+  margin-top: 20px;
+}
+
+@media(max-width: 600px){
+  .cart{
+    justify-content: center;
+    flex-direction: column;
+    padding-bottom: 170px;
+  }
+  .buyCart{
+    right: auto;
+  }
+  .emptyCart{
+    font-size: 25px;
+  }
+}

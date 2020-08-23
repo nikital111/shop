@@ -29,7 +29,7 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 740px) {
+@media (max-width: 766px) {
   header .container {
     flex-wrap: wrap;
     justify-content: center;
@@ -42,8 +42,8 @@ a {
   }
 }
 
-@media (max-width: 740px) {
-  hr {
+@media (max-width: 766px) {
+ footer hr {
     width: 250px;
     height: 0;
   }

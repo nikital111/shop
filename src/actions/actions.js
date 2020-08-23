@@ -42,3 +42,19 @@ export const setImg = (e) => ({
 export const sortByPrice = () => ({
     type: 'SORT_BY'
 })
+
+export const isOpenSidebar = () => ({
+  type: 'IS_OPEN_SIDEBAR'
+})
+
+export const toCart = (product,count,val) => ({
+  type:'TO_CART',
+  product:product,
+  count:count,
+  val:val
+})
+
+export const delFromACart = (i) => ({
+  type: 'DELETE_FROM_A_CART',
+  i:i
+})
