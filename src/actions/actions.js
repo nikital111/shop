@@ -44,17 +44,25 @@ export const sortByPrice = () => ({
 })
 
 export const isOpenSidebar = () => ({
-  type: 'IS_OPEN_SIDEBAR'
+    type: 'IS_OPEN_SIDEBAR'
 })
 
-export const toCart = (product,count,val) => ({
-  type:'TO_CART',
-  product:product,
-  count:count,
-  val:val
+export const toCart = (product, count, val) => ({
+    type: 'TO_CART',
+    product: product,
+    count: count,
+    val: val
 })
 
 export const delFromACart = (i) => ({
-  type: 'DELETE_FROM_A_CART',
-  i:i
+    type: 'DELETE_FROM_A_CART',
+    i: i
+})
+
+export const isOpenLogin = () => ({
+    type: 'IS_OPEN_LOGIN'
+})
+
+export const isNeedReg = () => ({
+    type: 'IS_NEED_REG'
 })

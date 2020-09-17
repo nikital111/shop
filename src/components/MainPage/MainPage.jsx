@@ -8,7 +8,7 @@ import {
   setSpec,
   setImg,
   sortByPrice,
-  isOpenSidebar
+  isOpenSidebar,
 } from "../../actions/actions";
 import "./MainPage.css";
 import Product from "./Product";
@@ -70,9 +70,9 @@ function MainPage() {
       else objOfBrands[product.brand] = 1;
     }
     return Object.keys(objOfBrands).map((brand, key) => {
-      let brandL = brand.split('');
+      let brandL = brand.split("");
       brandL[0] = brandL[0].toUpperCase();
-      brandL = brandL.join('');
+      brandL = brandL.join("");
       return (
         <li key={`${brand}_${key}`}>
           <input
@@ -173,23 +173,21 @@ function MainPage() {
   const openSide = () => {
     dispatch(isOpenSidebar());
     let leftSideB = -260;
-   const timer = setInterval(()=>{
-     if(leftSideB >= -5) clearInterval(timer)
-    leftSideB += 3;
-    sideB.current.style.left = leftSideB + 'px';
-    },1)
-  }
-   const closeSide = () => {
-     dispatch(isOpenSidebar());
+    const timer = setInterval(() => {
+      if (leftSideB >= -5) clearInterval(timer);
+      leftSideB += 3;
+      sideB.current.style.left = leftSideB + "px";
+    }, 1);
+  };
+  const closeSide = () => {
+    dispatch(isOpenSidebar());
     let leftSideB = 0;
-   const timer = setInterval(()=>{
-     if(leftSideB <= -260) clearInterval(timer)
-    leftSideB -= 3;
-    sideB.current.style.left = leftSideB + 'px';
-    },1)
-  }
-
- 
+    const timer = setInterval(() => {
+      if (leftSideB <= -260) clearInterval(timer);
+      leftSideB -= 3;
+      sideB.current.style.left = leftSideB + "px";
+    }, 1);
+  };
 
   return (
     <>
@@ -200,7 +198,7 @@ function MainPage() {
           </div>
         </div>
       ) : null}
-      
+
       <div className="container" id="main">
         <div className="sortedDiv" onClick={sortBy}>
           <span className="arrow" ref={ar}>
@@ -209,14 +207,20 @@ function MainPage() {
           Сортировать по цене
         </div>
         <div id="sidebar" ref={sideB}>
-          <div id='sideFilt'>
+          <div id="sideFilt">
             <h3>Бренды:</h3>
             <ul>
               {listOfBrands()}
               {listOfSpecifications()}
             </ul>
           </div>
-          <button id='openSide' className={isOpen ? 'rotatedSide' : ''} onClick={!isOpen ? openSide : closeSide}>></button>
+          <button
+            id="openSide"
+            className={isOpen ? "rotatedSide" : ""}
+            onClick={!isOpen ? openSide : closeSide}
+          >
+            >
+          </button>
         </div>
 
         <div id="content">{list}</div>

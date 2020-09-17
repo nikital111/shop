@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.cart{
+.cart {
   min-height: 400px;
   width: 500px;
   display: flex;
@@ -46,11 +46,11 @@
   flex-direction: column;
   justify-content: center;
   height: 150px;
-  max-width: 110px; 
+  max-width: 110px;
   font-size: 17px;
-} 
+}
 .main img {
-  margin-top:10px;
+  margin-top: 10px;
   height: 120px;
   width: 100px;
   cursor: pointer;
@@ -65,7 +65,7 @@
   position: absolute;
   bottom: 0px;
   right: -115px;
-} 
+}
 .divCount input {
   max-width: 52px;
   height: 27px;
@@ -89,7 +89,7 @@
   font-size: 25px;
   color: white;
   background-color: black;
-    border: none;
+  border: none;
   border-radius: 10px;
   align-items: center;
   cursor: pointer;
@@ -108,7 +108,7 @@
   font-size: 15px;
   color: red;
   background-color: white;
-    border: none;
+  border: none;
   border-radius: 10px;
   align-items: center;
   cursor: pointer;
@@ -119,27 +119,27 @@
   color: white;
 }
 
-.emptyCart{
-display: flex;
-justify-content: center;
-flex-direction: column;
-align-items: center;
-font-size: 40px;
+.emptyCart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 40px;
 }
 .emptyCart NavLink {
   margin-top: 20px;
 }
 
-@media(max-width: 600px){
-  .cart{
+@media (max-width: 600px) {
+  .cart {
     justify-content: center;
     flex-direction: column;
     padding-bottom: 170px;
   }
-  .buyCart{
+  .buyCart {
     right: auto;
   }
-  .emptyCart{
+  .emptyCart {
     font-size: 25px;
   }
 }

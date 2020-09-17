@@ -43,7 +43,7 @@ a {
 }
 
 @media (max-width: 766px) {
- footer hr {
+  footer hr {
     width: 250px;
     height: 0;
   }

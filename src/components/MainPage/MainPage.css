@@ -231,12 +231,12 @@
   height: 100%;
 }
 
-#openSide{
+#openSide {
   display: none;
   position: absolute;
   right: -50px;
-  top:0px;
-  border:none;
+  top: 0px;
+  border: none;
   width: 40px;
   height: 35px;
   font-size: 30px;
@@ -260,15 +260,14 @@
     min-height: auto;
     position: absolute;
     width: 250px;
-    background-color:white;
+    background-color: white;
     z-index: 9;
     left: -260px;
   }
 
-  #openSide{
+  #openSide {
     display: block;
   }
-
 }
 
 @media (max-width: 766px) {

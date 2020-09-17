@@ -40,7 +40,7 @@ const Footer = () => {
             <li>
               <a href="#">
                 <img
-                  src={require('../../../image/instagram-icon.png')}
+                  src={require("../../../image/instagram-icon.png")}
                   alt="instagram"
                   className="icon"
                 />
@@ -49,7 +49,7 @@ const Footer = () => {
             <li>
               <a href="#">
                 <img
-                  src={require('../../../image/facebook-icon.png')}
+                  src={require("../../../image/facebook-icon.png")}
                   alt="facebook"
                   className="icon"
                 />
@@ -58,7 +58,7 @@ const Footer = () => {
             <li>
               <a href="#">
                 <img
-                  src={require('../../../image/youtube-icon.png')}
+                  src={require("../../../image/youtube-icon.png")}
                   alt="youtube"
                   className="icon"
                 />
@@ -67,7 +67,7 @@ const Footer = () => {
             <li>
               <a href="#">
                 <img
-                  src={require('../../../image/twitter-icon.png')}
+                  src={require("../../../image/twitter-icon.png")}
                   alt="twitter"
                   className="icon"
                 />
