@@ -27,6 +27,7 @@ header a {
   font-family: Arial, Helvetica, sans-serif;
   color: white;
   cursor: pointer;
+  width: 100%;
 }
 
 header li {

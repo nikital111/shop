@@ -9,6 +9,8 @@ import {
   setImg,
   sortByPrice,
   isOpenSidebar,
+  setAdmin,
+  deletingProduct,
 } from "../../actions/actions";
 import "./MainPage.css";
 import Product from "./Product";
@@ -20,8 +22,18 @@ function MainPage() {
   const sortParams = useSelector((state) => state.sortParams);
   const curImg = useSelector((state) => state.img);
   const isOpen = useSelector((state) => state.isOpenSidebar);
+  const isAdmin = useSelector((state) => state.isAdmin);
+  const deletedProducts = useSelector((state) => state.deletedProducts);
+
+  if(!isAdmin && localStorage.getItem('isAdmin')){
+    dispatch(setAdmin())
+  }
+ 
 
   useEffect(() => {
+    if(localStorage.getItem('deletedPr')){
+      dispatch(deletingProduct(JSON.parse(localStorage.getItem('deletedPr'))))
+    }
     dispatch(fetchProducts);
     if (sortParams.sortedBrand.length > 0) {
       for (let param of sortParams.sortedBrand) {
@@ -59,6 +71,8 @@ function MainPage() {
         price={product.price}
         priceN={product.priceN}
         specifications={product.specification}
+        id={product.id}
+        brand ={product.brand}
       />
     );
   });
@@ -189,8 +203,23 @@ function MainPage() {
     }, 1);
   };
 
+  const resetProducts = () => {
+    fetch('http://localhost:3001/products',{method:'post', headers:{
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(deletedProducts[deletedProducts.length-1]) 
+})
+  let parsedStore = JSON.parse(localStorage.getItem('deletedPr'));
+  if(parsedStore.length === 1) localStorage.removeItem('deletedPr')
+  else{
+  parsedStore.pop();
+  localStorage.setItem('deletedPr',JSON.stringify(parsedStore));
+  }
+  }
+
   return (
     <>
+     {isAdmin && localStorage.getItem('deletedPr') ? <button className="resetBut" onClick={resetProducts}>Вернуть</button> : null}
       {curImg ? (
         <div className="wrap" onClick={closeImg}>
           <div className="root">
@@ -202,7 +231,7 @@ function MainPage() {
       <div className="container" id="main">
         <div className="sortedDiv" onClick={sortBy}>
           <span className="arrow" ref={ar}>
-            >
+           {'>'}
           </span>
           Сортировать по цене
         </div>
@@ -219,7 +248,7 @@ function MainPage() {
             className={isOpen ? "rotatedSide" : ""}
             onClick={!isOpen ? openSide : closeSide}
           >
-            >
+            {'>'}
           </button>
         </div>
 

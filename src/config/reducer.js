@@ -7,13 +7,16 @@ const initialState = {
     sortedSpec: [],
     sortedBy: true
   },
+  deletedProducts:null,
   img: null,
   isOpenSidebar: false,
   isOpenLogin: false,
   isNeedReg: false,
   cart: [],
   total: 0,
-  totalPrice: 0
+  totalPrice: 0,
+  isAdmin:false,
+  isLoginned:false
 };
 
 const reduceMain = (state = initialState, action) => {
@@ -192,6 +195,20 @@ const reduceMain = (state = initialState, action) => {
       return {
         ...state,
         isNeedReg: !state.isNeedReg
+      }
+    }
+    
+    case "SET_ADMIN": {
+      return {
+        ...state,
+        isAdmin: !state.isAdmin
+      }
+    }
+
+    case "ADD_DELETED_PRODUCT": {
+      return {
+        ...state,
+        deletedProducts:action.payload
       }
     }
 

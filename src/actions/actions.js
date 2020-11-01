@@ -9,6 +9,10 @@ export const fetchProducts = (dispatch) => {
         })
 }
 
+export const setAdmin = () => ({
+    type:'SET_ADMIN'
+})
+
 export const setProducts = (data) => ({
     type: 'SET_PRODUCTS',
     payload: data
@@ -65,4 +69,9 @@ export const isOpenLogin = () => ({
 
 export const isNeedReg = () => ({
     type: 'IS_NEED_REG'
+})
+
+export const deletingProduct = (pr) => ({
+    type:'ADD_DELETED_PRODUCT',
+    payload:pr
 })

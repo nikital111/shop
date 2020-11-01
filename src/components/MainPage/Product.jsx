@@ -1,12 +1,13 @@
 import React from "react";
 import "./MainPage.css";
 import { useDispatch, useSelector } from "react-redux";
-import { setImg } from "../../actions/actions";
+import { deletingProduct, setImg } from "../../actions/actions";
 import { toCart } from "../../actions/actions";
 
-function Product({ imageURL, name, price, priceN, specifications }) {
+function Product({ imageURL, name, price, priceN, specifications,id,brand }) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
+  const isAdmin = useSelector((state) => state.isAdmin);
   const specification = Object.keys(specifications).map((spec, val) => {
     return (
       <li key={`${spec}_${val}`} className="spec_item">
@@ -15,6 +16,39 @@ function Product({ imageURL, name, price, priceN, specifications }) {
       </li>
     );
   });
+
+  const deleteProduct = (e) => {
+    e.preventDefault();
+    fetch(`http://localhost:3001/products/${id}`,{method:"DELETE"})
+        .then(res => {
+          return res.json()
+      })
+      .then(data => {
+        console.log(data)
+      })
+      if(localStorage.getItem('deletedPr')){
+        let readyData = JSON.parse(localStorage.getItem('deletedPr'));
+        readyData.push({
+          "imageURL": imageURL,
+          "name": name,
+          "priceN": priceN,
+          "price": price,
+          "brand": brand,
+          "specification": specifications
+        })
+        localStorage.setItem('deletedPr',JSON.stringify(readyData))
+      }
+      else {
+        localStorage.setItem('deletedPr',JSON.stringify([{
+          "imageURL": imageURL,
+          "name": name,
+          "priceN": priceN,
+          "price": price,
+          "brand": brand,
+          "specification": specifications
+        }]))
+      }
+  }
   const zoomImg = () => {
     dispatch(setImg(imageURL));
   };
@@ -54,6 +88,7 @@ function Product({ imageURL, name, price, priceN, specifications }) {
         <h4>Характеристики:</h4>
         <ul className="specifications-list">{specification}</ul>
       </div>
+      {isAdmin ? <div className="deleteP" onClick={deleteProduct}>X</div> : null}
     </div>
   );
 }

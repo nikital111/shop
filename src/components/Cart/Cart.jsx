@@ -2,8 +2,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toCart, delFromACart, setImg } from "../../actions/actions";
+import { toCart, delFromACart, setImg, setAdmin } from "../../actions/actions";
 import "./Cart.css";
+import { useEffect } from "react";
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,11 @@ const Cart = () => {
   const totalPrice = useSelector((state) => state.totalPrice);
   const curImg = useSelector((state) => state.img);
   const total = useSelector((state) => state.total);
+  const isAdmin = useSelector((state) => state.isAdmin);
+
+    if(!isAdmin && localStorage.getItem('isAdmin')){
+      dispatch(setAdmin())
+    }
 
   const closeImg = () => {
     dispatch(setImg());

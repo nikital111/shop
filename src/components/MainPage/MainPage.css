@@ -123,6 +123,19 @@
   text-align: center;
 }
 
+.deleteP {
+  visibility: hidden;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: red;
+  cursor: pointer;
+}
+
+.product:hover .deleteP{
+  visibility: visible;
+}
+
 .product:hover {
   -moz-transform: scale(1.02);
   -webkit-transform: scale(1.02);
@@ -246,6 +259,14 @@
   transition: transform 0.3s;
 }
 
+.resetBut {
+  z-index: 99;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 @media (max-width: 1015px) {
   #content {
     width: 100%;
@@ -296,5 +317,8 @@
   .product {
     max-width: 100%;
     width: 100%;
+  }
+  .resetBut {
+    left: 10px;
   }
 }
