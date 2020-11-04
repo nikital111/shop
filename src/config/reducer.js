@@ -16,7 +16,7 @@ const initialState = {
   total: 0,
   totalPrice: 0,
   isAdmin:false,
-  isLoginned:false
+  isLogginned:false
 };
 
 const reduceMain = (state = initialState, action) => {
@@ -202,6 +202,13 @@ const reduceMain = (state = initialState, action) => {
       return {
         ...state,
         isAdmin: !state.isAdmin
+      }
+    }
+
+    case "SET_LOGIN": {
+      return {
+        ...state,
+        isLogginned: !state.isLogginned
       }
     }
 

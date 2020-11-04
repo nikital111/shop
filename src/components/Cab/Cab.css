@@ -1,0 +1,62 @@
+.noAuth{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.contCab {
+    max-width: 1200px;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.personalData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dataName {
+    opacity: 0.7;
+    font-size: 15px;
+}
+
+.dataText {
+    font-size: 20px;
+}
+
+.dataText input {
+    font-size: 20px;
+    height: 25px;
+}
+
+.dataCont {
+    margin: 5px 0px;
+}
+
+.dataEditButt {
+    border-radius: 5px;
+}
+.dataEditButt:hover {
+    border: 1px  #a4c638 solid;
+    color:  #a4c638;
+}
+
+.imgData {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+} 
+.imgData img {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0px 35px 35px 0px;
+}  

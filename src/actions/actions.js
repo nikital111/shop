@@ -13,6 +13,10 @@ export const setAdmin = () => ({
     type:'SET_ADMIN'
 })
 
+export const setLogin = () => ({
+    type:'SET_LOGIN'
+})
+
 export const setProducts = (data) => ({
     type: 'SET_PRODUCTS',
     payload: data

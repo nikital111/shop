@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import { useDispatch, useSelector } from "react-redux";
-import { isOpenLogin, isNeedReg, setAdmin } from "../../actions/actions";
+import { isOpenLogin, isNeedReg, setAdmin, setLogin } from "../../actions/actions";
 
 function Login() {
   const dispatch = useDispatch();
@@ -12,7 +12,7 @@ function Login() {
     dispatch(isOpenLogin());
   };
 
-  const auth = (e)=>{
+  const auth = e =>{
     e.preventDefault();
     const login = document.querySelector('#logL').value;
     const password = document.querySelector('#passL').value;
@@ -26,11 +26,38 @@ function Login() {
             if(data[0]){
             if(data[0].login === "admin"){
               localStorage.setItem('isAdmin','true')
+              localStorage.setItem('isLogginned','true')
+              localStorage.setItem('personalData',JSON.stringify(data[0]))
               dispatch(setAdmin());
-            }}
+              dispatch(setLogin());
+            }
+            else {
+              localStorage.setItem('isLogginned','true')
+              localStorage.setItem('personalData',JSON.stringify(data[0]))
+              dispatch(setLogin());
+            }
+          
+          }
         })
         
       dispatch(isOpenLogin());
+  }
+
+  const registration = (e) => {
+    e.preventDefault();
+    const loginR = document.querySelector('#logR').value;
+    const passR = document.querySelector('#passR').value;
+    const emailR = document.querySelector('#emailR').value;
+
+      fetch('http://localhost:3001/logins',{method:'post', headers:{
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      email:emailR,
+      login:loginR,
+      pass:passR
+    }) 
+  })
   }
 
   const reg = (e) => {
@@ -46,10 +73,10 @@ function Login() {
             X
           </button>
           <form onSubmit={auth}>
-            <input type="text" name="log" id="logL" defaultValue="admin" placeholder="Логин" />
-            <input type="password" name="pass" id="passL" defaultValue="admin1" placeholder="Пароль" />
-            <button type="submit">Войти</button>
-            <button onClick={reg}>Зарегистрироваться</button>
+            <input type="text" name="log" id="logL" className="inputLogin" defaultValue="admin" placeholder="Логин" />
+            <input type="password" name="pass" id="passL" className="inputLogin" defaultValue="admin1" placeholder="Пароль" />
+            <button type="submit" className="buttLogin">Войти</button>
+            <button onClick={reg} className="buttLogin">Зарегистрироваться</button>
           </form>
         </div>
       ) : (
@@ -57,12 +84,12 @@ function Login() {
             <button className="closeButt" onClick={closeLogin}>
               X
           </button>
-            <form>
-              <input type="email" placeholder="Почта" />
-              <input type="text" placeholder="Логин" />
-              <input type="password" placeholder="Пароль" />
-              <button>Зарегистрироваться</button>
-              <button onClick={reg}>Войти</button>
+            <form onSubmit={registration}>
+              <input type="email" name="emailR" id="emailR" className="inputLogin" placeholder="Почта" />
+              <input type="text" name="logR" id="logR" className="inputLogin" placeholder="Логин" />
+              <input type="password" name="passR" id="passR" className="inputLogin" placeholder="Пароль" />
+              <button type='submit' className="buttLogin">Зарегистрироваться</button>
+              <button onClick={reg} className="buttLogin">Войти</button>
             </form>
           </div>
         )}

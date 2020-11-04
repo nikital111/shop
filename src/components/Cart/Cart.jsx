@@ -2,7 +2,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { toCart, delFromACart, setImg, setAdmin } from "../../actions/actions";
+import { toCart, delFromACart, setImg, setAdmin, setLogin } from "../../actions/actions";
 import "./Cart.css";
 import { useEffect } from "react";
 
@@ -13,9 +13,13 @@ const Cart = () => {
   const curImg = useSelector((state) => state.img);
   const total = useSelector((state) => state.total);
   const isAdmin = useSelector((state) => state.isAdmin);
+  const isLogginned = useSelector((state) => state.isLogginned);
 
     if(!isAdmin && localStorage.getItem('isAdmin')){
       dispatch(setAdmin())
+    }
+    if(!isLogginned && localStorage.getItem('isLogginned')){
+      dispatch(setLogin())
     }
 
   const closeImg = () => {

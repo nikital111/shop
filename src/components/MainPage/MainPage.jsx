@@ -11,6 +11,7 @@ import {
   isOpenSidebar,
   setAdmin,
   deletingProduct,
+  setLogin,
 } from "../../actions/actions";
 import "./MainPage.css";
 import Product from "./Product";
@@ -24,11 +25,14 @@ function MainPage() {
   const isOpen = useSelector((state) => state.isOpenSidebar);
   const isAdmin = useSelector((state) => state.isAdmin);
   const deletedProducts = useSelector((state) => state.deletedProducts);
+  const isLogginned = useSelector((state) => state.isLogginned);
 
   if(!isAdmin && localStorage.getItem('isAdmin')){
     dispatch(setAdmin())
   }
- 
+  if(!isLogginned && localStorage.getItem('isLogginned')){
+    dispatch(setLogin())
+  }
 
   useEffect(() => {
     if(localStorage.getItem('deletedPr')){
@@ -203,7 +207,8 @@ function MainPage() {
     }, 1);
   };
 
-  const resetProducts = () => {
+  const resetProducts = e => {
+    e.preventDefault();
     fetch('http://localhost:3001/products',{method:'post', headers:{
     "Content-Type": "application/json"
   },

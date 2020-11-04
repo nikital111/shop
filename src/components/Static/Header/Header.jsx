@@ -2,7 +2,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { isOpenLogin, setAdmin } from "../../../actions/actions";
+import { isOpenLogin, setAdmin, setLogin } from "../../../actions/actions";
 import Login from "../../Login/Login";
 import "./Header.css";
 import { useEffect } from "react";
@@ -12,10 +12,13 @@ const Header = () => {
   const total = useSelector((state) => state.total);
   const isOpen = useSelector((state) => state.isOpenLogin);
   const isAdmin = useSelector((state) => state.isAdmin);
-  const deletedProducts = useSelector((state) => state.deletedProducts);
+  const isLogginned = useSelector((state) => state.isLogginned);
 
     if(!isAdmin && localStorage.getItem('isAdmin')){
       dispatch(setAdmin())
+    }
+    if(!isLogginned && localStorage.getItem('isLogginned')){
+      dispatch(setLogin())
     }
 
   window.addEventListener("scroll", () => {
@@ -59,7 +62,7 @@ const Header = () => {
               )}
             </li>
             <li>
-              {!isAdmin ? 
+              {!isLogginned ? 
               <button className="divLogin" onClick={openLogin}>
               Вход
             </button> :
@@ -70,11 +73,13 @@ const Header = () => {
                 </NavLink>
             }
             </li>
-            {isAdmin ? 
+            {isLogginned? 
             <li>
               <button onClick={()=>{
                 dispatch(setAdmin())
-                localStorage.removeItem('isAdmin')
+                dispatch(setLogin())
+                if(localStorage.getItem("isAdmin")) localStorage.removeItem('isAdmin')
+                localStorage.removeItem('isLogginned')
               }} className="divLogin">
             Выйти
           </button>
